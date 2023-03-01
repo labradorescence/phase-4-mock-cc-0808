@@ -15,7 +15,7 @@ class CampersController < ApplicationController
     end
 
     def create
-        camper = Camper.find_by(camper_params)
+        camper = Camper.create(camper_params)
         if camper 
             render json: camper  , status: :created
         else 

@@ -11,7 +11,7 @@ class SignupsController < ApplicationController
     end
 
     def create 
-        signup = Signup.find_by(signup_params)
+        signup = Signup.create(signup_params)
         if signup 
             render json: signup, status: :created
         else
