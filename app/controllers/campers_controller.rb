@@ -22,6 +22,6 @@ rescue_from ActiveRecord::RecordNotFound, with: :not_found
     end
     
     def not_found
-        render json: {error: "Camper not found"}
+        render json: {error: "Camper not found"}, status: 404
     end
 end

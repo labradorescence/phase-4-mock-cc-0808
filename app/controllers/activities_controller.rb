@@ -8,10 +8,11 @@ rescue_from ActiveRecord::RecordNotFound, with: :not_found
         activity = Activity.find(params[:id])
         render json: activity
     end
+    
     def destroy
         activity = Activity.find(params[:id])
         activity.destroy
-        render json: {}, status: 200
+        head :no_content, status: 204
     end
 
     private
